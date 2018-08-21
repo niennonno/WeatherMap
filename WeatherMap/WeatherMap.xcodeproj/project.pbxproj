@@ -14,6 +14,7 @@
 		D3947DE1212C1F16005FB4A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3947DE0212C1F16005FB4A5 /* Assets.xcassets */; };
 		D3947DE4212C1F16005FB4A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3947DE2212C1F16005FB4A5 /* LaunchScreen.storyboard */; };
 		D3947DEE212C26A1005FB4A5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3947DED212C26A1005FB4A5 /* CoreLocation.framework */; };
+		D3E347B4212C4216008095C2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E347B3212C4216008095C2 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D3947DE3212C1F16005FB4A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3947DE5212C1F16005FB4A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3947DED212C26A1005FB4A5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D3E347B3212C4216008095C2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				D3947DD9212C1F14005FB4A5 /* AppDelegate.swift */,
-				D3947DEB212C2033005FB4A5 /* Controllers */,
+				D3947DEB212C2033005FB4A5 /* Swift Files */,
 				D3947DDD212C1F14005FB4A5 /* Main.storyboard */,
 				D3947DE0212C1F16005FB4A5 /* Assets.xcassets */,
 				D3947DE2212C1F16005FB4A5 /* LaunchScreen.storyboard */,
@@ -74,12 +76,13 @@
 			path = WeatherMap;
 			sourceTree = "<group>";
 		};
-		D3947DEB212C2033005FB4A5 /* Controllers */ = {
+		D3947DEB212C2033005FB4A5 /* Swift Files */ = {
 			isa = PBXGroup;
 			children = (
 				D3947DDB212C1F14005FB4A5 /* ViewController.swift */,
+				D3E347B3212C4216008095C2 /* Constants.swift */,
 			);
-			path = Controllers;
+			path = "Swift Files";
 			sourceTree = "<group>";
 		};
 		D3947DEC212C26A1005FB4A5 /* Frameworks */ = {
@@ -196,11 +199,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-WeatherMap/Pods-WeatherMap-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DataCache/DataCache.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DataCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -216,6 +221,7 @@
 			files = (
 				D3947DDC212C1F14005FB4A5 /* ViewController.swift in Sources */,
 				D3947DDA212C1F14005FB4A5 /* AppDelegate.swift in Sources */,
+				D3E347B4212C4216008095C2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
