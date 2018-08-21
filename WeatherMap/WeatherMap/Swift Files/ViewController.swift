@@ -63,6 +63,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
                 vc.city = city
                 self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                showAlertViewController(message: "Sorry! We can't find the nearby city!")
             }
             })
 
