@@ -15,6 +15,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
     @IBOutlet weak var mapKit: MKMapView!
     let manager = CLLocationManager()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +28,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
         manager.requestAlwaysAuthorization()
         manager.startUpdatingLocation()
         
+        //Diabling default doubletap
+        if (mapKit.subviews[0].gestureRecognizers != nil){
+            for gesture in mapKit.subviews[0].gestureRecognizers!{
+                if (gesture.isKind(of: UITapGestureRecognizer.self)){
+                    mapKit.subviews[0].removeGestureRecognizer(gesture)
+                }
+            }
+        }
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubeTapped(sender:)))
         doubleTap.numberOfTapsRequired = 2
         doubleTap.numberOfTouchesRequired = 1
@@ -46,6 +59,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
             // City
             if let city = placeMark.subAdministrativeArea {
                 print(city)
+                
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+                vc.city = city
+                self.navigationController?.pushViewController(vc, animated: true)
             }
             })
 

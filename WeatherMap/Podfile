@@ -9,5 +9,6 @@ target 'WeatherMap' do
   pod 'DataCache'
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'SVProgressHUD'
 
 end

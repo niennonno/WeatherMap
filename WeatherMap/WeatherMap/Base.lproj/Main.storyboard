@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O5N-z4-iYx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,24 +19,83 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vuE-Bc-FdY">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vuE-Bc-FdY" secondAttribute="bottom" id="8fI-Ia-0iJ"/>
-                            <constraint firstItem="vuE-Bc-FdY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BhK-NK-VXB"/>
+                            <constraint firstItem="vuE-Bc-FdY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BhK-NK-VXB"/>
                             <constraint firstItem="vuE-Bc-FdY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="F6c-bD-sWh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vuE-Bc-FdY" secondAttribute="trailing" id="hiS-f8-las"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="R00-Nj-CTu"/>
                     <connections>
                         <outlet property="mapKit" destination="vuE-Bc-FdY" id="lOF-RC-Bwp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="129.98500749625188"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="wHr-f5-oJl">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="xX0-kM-QGh" customClass="DetailViewController" customModule="WeatherMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MaI-N4-JAQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mys-xr-PHE">
+                                <rect key="frame" x="187" y="333.5" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nug-Tg-XgC">
+                                <rect key="frame" x="166" y="51" width="52.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1764705882" green="0.13725490200000001" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nug-Tg-XgC" firstAttribute="top" secondItem="wls-Ut-2AX" secondAttribute="top" constant="32" id="4h2-sh-LIC"/>
+                            <constraint firstItem="mys-xr-PHE" firstAttribute="centerX" secondItem="MaI-N4-JAQ" secondAttribute="centerX" id="EDr-zV-qIy"/>
+                            <constraint firstItem="mys-xr-PHE" firstAttribute="centerY" secondItem="MaI-N4-JAQ" secondAttribute="centerY" id="YCT-ld-pkk"/>
+                            <constraint firstItem="Nug-Tg-XgC" firstAttribute="centerX" secondItem="MaI-N4-JAQ" secondAttribute="centerX" id="Zmx-jC-9jB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wls-Ut-2AX"/>
+                    </view>
+                    <connections>
+                        <outlet property="cityWeatherLabel" destination="Nug-Tg-XgC" id="XIg-gz-8Lc"/>
+                        <outlet property="currentTempLabel" destination="mys-xr-PHE" id="FQb-hv-bub"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zPL-Pe-edB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1775" y="130"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SyL-Ay-6Gs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O5N-z4-iYx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SZz-Ld-3lp">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Irp-ie-KtZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ktg-QS-Icb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="788.45577211394311"/>
         </scene>
     </scenes>
 </document>
